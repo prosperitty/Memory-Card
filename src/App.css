@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(120, 142, 9);
+  background-image: url(./images/lol-loading.png);
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+
+  color: white;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px 0
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+
+  text-transform: capitalize;
+}
+
+.scoreboard-num {
+  padding: 0 5px;
+}
+
+p {
+  padding: 0 20px;
+}
+
+.gameboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.img-container {
+  text-align: center;
+}
