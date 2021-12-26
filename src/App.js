@@ -1,5 +1,6 @@
-import React from 'react';
-import Card from './components/Card';
+import React, { useEffect, useState } from 'react';
+import Score from './components/Score';
+import Deck from './components/Deck';
 import './App.css';
 import ahri from './images/ahri-card.jpg';
 import evelynn from './images/evelynn-card.jpg';
@@ -17,42 +18,83 @@ import yasuo from './images/yasuo-card.jpg';
 import yone from './images/yone-card.jpg';
 
 const App = () => {
+  const [deck, setDeck] = useState([
+    { id: 1, src: ahri, isChosen: false },
+    { id: 2, src: evelynn, isChosen: false },
+    { id: 3, src: fiora, isChosen: false },
+    { id: 4, src: irelia, isChosen: false },
+    { id: 5, src: missFortune, isChosen: false },
+    { id: 6, src: pantheon, isChosen: false },
+    { id: 7, src: samira, isChosen: false },
+    { id: 8, src: sylas, isChosen: false },
+    { id: 9, src: syndra, isChosen: false },
+    { id: 10, src: twistedFate, isChosen: false },
+    { id: 11, src: volibear, isChosen: false },
+    { id: 12, src: xayah, isChosen: false },
+    { id: 13, src: yasuo, isChosen: false },
+    { id: 14, src: yone, isChosen: false },
+  ]);
 
-  const play = () => {
-    console.log('click');
+  const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
+
+  const incrementScore = () => {
+    if (score < deck.length) {
+      setScore(score + 1);
+    } else if (score === deck.length) {
+      console.log('gameover');
+    }
+  };
+
+  const play = (e) => {
+    const targetImage = e.target.attributes[0].value;
+    incrementScore();
+    shuffle();
+    deck.forEach((card,i) => {
+      if (card.src === targetImage) {
+        if(!card.isChosen) {
+          deck[i].isChosen = true;
+          // console.log(e.target.attributes[0].value);
+        } else if (card.isChosen) {
+          setBestScore(score);
+          setScore(0);
+          setDeck([
+            { id: 1, src: ahri, isChosen: false },
+            { id: 2, src: evelynn, isChosen: false },
+            { id: 3, src: fiora, isChosen: false },
+            { id: 4, src: irelia, isChosen: false },
+            { id: 5, src: missFortune, isChosen: false },
+            { id: 6, src: pantheon, isChosen: false },
+            { id: 7, src: samira, isChosen: false },
+            { id: 8, src: sylas, isChosen: false },
+            { id: 9, src: syndra, isChosen: false },
+            { id: 10, src: twistedFate, isChosen: false },
+            { id: 11, src: volibear, isChosen: false },
+            { id: 12, src: xayah, isChosen: false },
+            { id: 13, src: yasuo, isChosen: false },
+            { id: 14, src: yone, isChosen: false },
+          ]);
+        }
+      }
+    });
+  };
+
+  const shuffle = () => {
+    for (let i = deck.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * i);
+      const temp = deck[i];
+      deck[i] = deck[j];
+      deck[j] = temp;
+    }
   };
 
   return (
     <div>
       <header>
         <h1>Memory Card</h1>
-        <div className="scoreboard">
-          <p>
-            <span>score:</span>
-            <span className="scoreboard-num">0</span>
-          </p>
-          <p>
-            <span>high score:</span>
-            <span className="scoreboard-num">0</span>
-          </p>
-        </div>
+        <Score score={score} bestScore={bestScore} />
       </header>
-      <div className="gameboard">
-        <Card play={play} image={ahri} />
-        <Card play={play} image={evelynn} />
-        <Card play={play} image={fiora} />
-        <Card play={play} image={irelia} />
-        <Card play={play} image={missFortune} />
-        <Card play={play} image={pantheon} />
-        <Card play={play} image={samira} />
-        <Card play={play} image={sylas} />
-        <Card play={play} image={syndra} />
-        <Card play={play} image={twistedFate} />
-        <Card play={play} image={volibear} />
-        <Card play={play} image={xayah} />
-        <Card play={play} image={yasuo} />
-        <Card play={play} image={yone} />
-      </div>
+      <Deck play={play} deck={deck} />
     </div>
   );
 };
