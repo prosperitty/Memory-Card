@@ -42,10 +42,10 @@ p {
 }
 
 .img-container {
-  border-top: 1.5px solid rgb(15, 15, 83);
-  border-right: 1.5px solid rgb(15, 15, 83);
-  border-left: 1.5px solid rgb(15, 15, 83);
-  border-bottom: 5px solid rgb(134, 247, 244);
+  border-top: 3px solid rgb(15, 15, 83);
+  border-right: 3px solid rgb(15, 15, 83);
+  border-bottom: 3px solid rgb(15, 15, 83);
+  border-left: 3px solid rgb(15, 15, 83);
 
   text-align: center;
   transform: scale3d(1.001, 1.001, 1);
