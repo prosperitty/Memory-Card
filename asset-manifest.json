@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.7bd53324.css",
+    "main.js": "/react-gh-pages/static/js/main.13184887.js",
+    "static/js/787.852ea1bb.chunk.js": "/react-gh-pages/static/js/787.852ea1bb.chunk.js",
+    "static/media/lol-loading.png": "/react-gh-pages/static/media/lol-loading.d3fdca262a8412b62842.png",
+    "static/media/volibear-card.jpg": "/react-gh-pages/static/media/volibear-card.121e3595dd4cc6683d10.jpg",
+    "static/media/yone-card.jpg": "/react-gh-pages/static/media/yone-card.65da638fa135de686d33.jpg",
+    "static/media/samira-card.jpg": "/react-gh-pages/static/media/samira-card.7371c0d22003a464de2f.jpg",
+    "static/media/yasuo-card.jpg": "/react-gh-pages/static/media/yasuo-card.cece80c43ff070b26103.jpg",
+    "static/media/missfortune-card.jpg": "/react-gh-pages/static/media/missfortune-card.6e15f8a55f8c57cd6ecd.jpg",
+    "static/media/ahri-card.jpg": "/react-gh-pages/static/media/ahri-card.b63f5e0b9029f6a92769.jpg",
+    "static/media/irelia-card.jpg": "/react-gh-pages/static/media/irelia-card.d70ce51d97efe9451097.jpg",
+    "static/media/fiora-card.jpg": "/react-gh-pages/static/media/fiora-card.0708164dfb72a602df45.jpg",
+    "static/media/sylas-card.jpg": "/react-gh-pages/static/media/sylas-card.c80aa12a10b4ffd3b88b.jpg",
+    "static/media/xayah-card.jpg": "/react-gh-pages/static/media/xayah-card.91ddbf1d714f45886fd0.jpg",
+    "static/media/evelynn-card.jpg": "/react-gh-pages/static/media/evelynn-card.a5036b3a92fcce24215a.jpg",
+    "static/media/pantheon-card.jpg": "/react-gh-pages/static/media/pantheon-card.b4ac74e427f9f80694cb.jpg",
+    "static/media/syndra-card.jpg": "/react-gh-pages/static/media/syndra-card.136c9de9de80425e252b.jpg",
+    "static/media/twistedfate-card.jpg": "/react-gh-pages/static/media/twistedfate-card.effc0c09f216759f83f5.jpg",
+    "index.html": "/react-gh-pages/index.html",
+    "main.7bd53324.css.map": "/react-gh-pages/static/css/main.7bd53324.css.map",
+    "main.13184887.js.map": "/react-gh-pages/static/js/main.13184887.js.map",
+    "787.852ea1bb.chunk.js.map": "/react-gh-pages/static/js/787.852ea1bb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7bd53324.css",
+    "static/js/main.13184887.js"
+  ]
+}
