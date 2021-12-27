@@ -53,25 +53,27 @@ const App = () => {
 
   const incrementScore = () => {
     if (score < deck.length) {
-      setScore(score + 1);
+      return setScore(score + 1);
     } else if (score === deck.length) {
-      console.log('gameover');
+      return 'gameover';
     }
   };
 
   const play = (e) => {
     const targetImage = e.target.attributes[0].value;
-    incrementScore();
     shuffle();
     deck.forEach((card, i) => {
       if (card.src === targetImage) {
-        if (!card.isChosen) {
-          deck[i].isChosen = true;
-          // console.log(e.target.attributes[0].value);
-        } else if (card.isChosen) {
-          setBestScore(score);
+        if (card.isChosen) {
+          setBestScore((prevBest) => {
+            if (prevBest >= score) {
+              return prevBest;
+            } else if (prevBest < score) {
+              return score;
+            } 
+          });
           setScore(0);
-          setDeck([
+          return setDeck([
             { id: 1, src: ahri, isChosen: false },
             { id: 2, src: evelynn, isChosen: false },
             { id: 3, src: fiora, isChosen: false },
@@ -87,7 +89,12 @@ const App = () => {
             { id: 13, src: yasuo, isChosen: false },
             { id: 14, src: yone, isChosen: false },
           ]);
-        }
+        
+        } else if (!card.isChosen) {
+          incrementScore();
+          return deck[i].isChosen = true;
+          // console.log(e.target.attributes[0].value);
+        } 
       }
     });
   };
