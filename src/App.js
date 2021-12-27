@@ -36,7 +36,20 @@ const App = () => {
   ]);
 
   const [score, setScore] = useState(0);
+  useEffect(() => {
+    document.score = `score: ${score}`;
+
+    console.log('score did mount and update');
+    console.log(document.score);
+  }, [score]);
+
   const [bestScore, setBestScore] = useState(0);
+  useEffect(() => {
+    document.bestScore = `best score: ${bestScore}`;
+
+    console.log('best score did mount and update');
+    console.log(document.bestScore);
+  }, [bestScore]);
 
   const incrementScore = () => {
     if (score < deck.length) {
@@ -50,9 +63,9 @@ const App = () => {
     const targetImage = e.target.attributes[0].value;
     incrementScore();
     shuffle();
-    deck.forEach((card,i) => {
+    deck.forEach((card, i) => {
       if (card.src === targetImage) {
-        if(!card.isChosen) {
+        if (!card.isChosen) {
           deck[i].isChosen = true;
           // console.log(e.target.attributes[0].value);
         } else if (card.isChosen) {
