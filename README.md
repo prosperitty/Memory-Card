@@ -29,4 +29,4 @@ The images displayed are characters(champions) from the League Of Legends game.
 
 [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/memory-card)
 
-[Live Demo](https://alex-lvl.github.io/Memory-Card/)
+[Live Demo](https://prosperitty.github.io/Memory-Card/)
